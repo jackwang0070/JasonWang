@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>我的软件官网</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+      text-align: center;
+    }
+
+    header {
+      background-color: #00796b;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .buttons {
+      margin: 30px 0;
+    }
+
+    .btn {
+      background-color: #00796b;
+      color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #004d40;
+    }
+
+    .popup {
+      display: none;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 300px;
+      margin: 20px auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>超级软件助手</h1>
+    <p>一个轻便、实用、快速的软件工具，提升你的工作效率。</p>
+  </header>
+
+  <div class="buttons">
+    <button class="btn" onclick="download()">立即下载</button>
+    <button class="btn" onclick="togglePopup()">联系客服</button>
+  </div>
+
+  <div class="popup" id="contactPopup">
+    <h3>联系客服</h3>
+    <p>QQ：123456789</p>
+    <p>微信：mysoftware_kefu</p>
+    <p>邮箱：support@example.com</p>
+  </div>
+
+  <script>
+    function download() {
+      // 替换成你的下载链接
+      window.location.href = "https://example.com/download/software.exe";
+    }
+
+    function togglePopup() {
+      const popup = document.getElementById("contactPopup");
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
