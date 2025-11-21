@@ -39,20 +39,23 @@
     .features {
       margin: 50px auto;
       max-width: 700px;
-      text-align: left;
+      text-align: center; /* 改成居中 */
     }
 
     .feature-item {
       font-size: 1.1em;
       margin: 15px 0;
-      padding-left: 30px;
       position: relative;
+      display: inline-block; /* 改成 inline-block */
+      text-align: left; /* 让每条文字本身左对齐 */
+      padding-left: 35px; /* 给 emoji 留位置 */
     }
 
     .feature-item::before {
       content: "👉";
       position: absolute;
       left: 0;
+      top: 0;
     }
 
     .buttons {
@@ -145,15 +148,14 @@
   </div>
 
   <div class="buttons">
-    <button class="btn btn-primary" onclick="download()">立即获取线索</button>
-    <button class="btn btn-secondary" onclick="togglePopup()">联系客服</button>
+    <button class="btn btn-primary" onclick="download()">下载专供客户端(Windows)</button>
+    <button class="btn btn-secondary" onclick="togglePopup()">联系我们</button>
   </div>
 
   <div class="popup" id="contactPopup">
-    <h3>联系客服</h3>
-    <p>QQ：1658394392</p>
-    <p>微信：mysoftware_kefu</p>
-    <p>邮箱：support@example.com</p>
+    <h3>联系我们</h3>
+    <p>QQ 1：1658394392</p>
+    <p>QQ 2：1102026095</p>
   </div>
 
   <script>
