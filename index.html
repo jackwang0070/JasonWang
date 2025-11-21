@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>超级软件助手</title>
+  <title>法务线索直供平台</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
+      background: linear-gradient(135deg, #f0f4f8, #ffffff);
       color: #111;
       text-align: center;
     }
 
     header {
       padding: 100px 20px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(8px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -25,7 +25,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 3.5em;
+      font-size: 3.2em;
       font-weight: 700;
       color: #0a3d62;
     }
@@ -34,6 +34,25 @@
       margin-top: 15px;
       font-size: 1.3em;
       color: #333;
+    }
+
+    .features {
+      margin: 50px auto;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .feature-item {
+      font-size: 1.1em;
+      margin: 15px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .feature-item::before {
+      content: "👉";
+      position: absolute;
+      left: 0;
     }
 
     .buttons {
@@ -102,10 +121,10 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 小屏适配 */
     @media (max-width: 480px) {
       header h1 { font-size: 2.2em; }
       header p { font-size: 1em; }
+      .feature-item { font-size: 1em; padding-left: 25px; }
       .btn { padding: 12px 30px; font-size: 1em; }
       .popup { width: 90%; padding: 20px; }
     }
@@ -114,24 +133,39 @@
 <body>
 
   <header>
-    <h1>超级软件助手</h1>
-    <p></p>
+    <h1>法务线索直供平台</h1>
+    <p>精准、高效、可靠，让法务电销更轻松</p>
   </header>
 
+  <div class="features">
+    <div class="feature-item">精准债主线索直供</div>
+    <div class="feature-item">法务电销高转化客户</div>
+    <div class="feature-item">全主动留号、高接通率</div>
+    <div class="feature-item">每日上新、免费试用、满意合作</div>
+  </div>
+
   <div class="buttons">
-    <button class="btn btn-primary" onclick="download()">立即下载</button>
+    <button class="btn btn-primary" onclick="download()">立即获取线索</button>
     <button class="btn btn-secondary" onclick="togglePopup()">联系客服</button>
   </div>
 
   <div class="popup" id="contactPopup">
-    <h3>联系我们</h3>
+    <h3>联系客服</h3>
     <p>QQ：1658394392</p>
+    <p>微信：mysoftware_kefu</p>
+    <p>邮箱：support@example.com</p>
   </div>
 
   <script>
     function download() {
-      window.location.href = "https://example.com/download/software.exe";
+      window.location.href = "https://example.com/download/linxiao.exe";
     }
 
     function togglePopup() {
-      const popup = document.getElementById("contactPopup")
+      const popup = document.getElementById("contactPopup");
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
