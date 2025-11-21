@@ -36,19 +36,20 @@
       color: #333;
     }
 
+    /* 宣传语竖列居中 */
     .features {
       margin: 50px auto;
-      max-width: 700px;
-      text-align: center; /* 改成居中 */
+      display: flex;
+      flex-direction: column; /* 竖列排列 */
+      align-items: center;    /* 水平居中 */
+      gap: 15px;              /* 每条之间间距 */
     }
 
     .feature-item {
       font-size: 1.1em;
-      margin: 15px 0;
       position: relative;
-      display: inline-block; /* 改成 inline-block */
-      text-align: left; /* 让每条文字本身左对齐 */
-      padding-left: 35px; /* 给 emoji 留位置 */
+      padding-left: 30px; /* 给 emoji 留位置 */
+      text-align: left;   /* 保证每条文字左对齐 */
     }
 
     .feature-item::before {
@@ -145,17 +146,17 @@
     <div class="feature-item">法务电销高转化客户</div>
     <div class="feature-item">全主动留号、高接通率</div>
     <div class="feature-item">每日上新、免费试用、满意合作</div>
-    <div class="feature-item">免费供应CRM办公系统</div>
+    <div class="feature-item">提供CRM办公系统</div>
   </div>
 
   <div class="buttons">
-    <button class="btn btn-primary" onclick="download()">联系我们</button>
+    <button class="btn btn-primary" onclick="togglePopup()">立即获取线索</button>
   </div>
 
-  <div class="popup" id="download">
-    <h3>联系我们</h3>
-    <p>QQ 1：1658394392</p>
-    <p>QQ 2：1102026095</p>
+  <div class="popup" id="contactPopup">
+    <h3>联系客服</h3>
+    <p>QQ：1658394392</p>
+    <p>QQ：1102026095</p>
   </div>
 
   <script>
