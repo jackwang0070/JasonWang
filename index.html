@@ -1,93 +1,113 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>我的软件官网</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>超级软件助手</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
     body {
       margin: 0;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      background: #f7f9fc;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
+      color: #111;
       text-align: center;
     }
 
     header {
-      padding: 80px 20px;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e9f0;
+      padding: 100px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     header h1 {
       margin: 0;
-      font-size: 3em;
-      font-weight: 600;
-      color: #111;
+      font-size: 3.5em;
+      font-weight: 700;
+      color: #0a3d62;
     }
 
     header p {
       margin-top: 15px;
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    .buttons {
-      margin: 40px 0;
-    }
-
-    .btn {
-      padding: 14px 40px;
-      font-size: 1.05em;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      margin: 10px;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: #0a84ff;
-      color: white;
-      box-shadow: 0 4px 12px rgba(10,132,255,0.2);
-    }
-
-    .btn-primary:hover {
-      background: #0066d6;
-    }
-
-    .btn-secondary {
-      background: #f2f4f7;
+      font-size: 1.3em;
       color: #333;
     }
 
-    .btn-secondary:hover {
-      background: #e1e4e8;
+    .buttons {
+      margin: 50px 0;
     }
 
-    /* 弹窗 */
+    .btn {
+      padding: 15px 45px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      margin: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0a84ff, #1e90ff);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0066d6, #0a64c2);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.9);
+      color: #0a3d62;
+      border: 1px solid #0a3d62;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
     .popup {
       display: none;
-      background: #fff;
-      width: 320px;
+      background: rgba(255,255,255,0.95);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 340px;
       margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
       text-align: left;
       animation: fadeIn 0.3s ease;
+      backdrop-filter: blur(6px);
     }
 
     .popup h3 {
       margin-top: 0;
-      font-size: 1.3em;
-      color: #111;
+      font-size: 1.4em;
+      color: #0a3d62;
+    }
+
+    .popup p {
+      font-size: 1em;
+      margin: 6px 0;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 小屏适配 */
+    @media (max-width: 480px) {
+      header h1 { font-size: 2.2em; }
+      header p { font-size: 1em; }
+      .btn { padding: 12px 30px; font-size: 1em; }
+      .popup { width: 90%; padding: 20px; }
     }
   </style>
 </head>
@@ -95,7 +115,7 @@
 
   <header>
     <h1>超级软件助手</h1>
-    <p>极简 · 高效 · 快速，助你提升工作效率 200%。</p>
+    <p></p>
   </header>
 
   <div class="buttons">
@@ -104,10 +124,8 @@
   </div>
 
   <div class="popup" id="contactPopup">
-    <h3>联系客服</h3>
+    <h3>联系我们</h3>
     <p>QQ：1658394392</p>
-    <p>微信：mysoftware_kefu</p>
-    <p>邮箱：support@example.com</p>
   </div>
 
   <script>
@@ -116,10 +134,4 @@
     }
 
     function togglePopup() {
-      const popup = document.getElementById("contactPopup");
-      popup.style.display = popup.style.display === "block" ? "none" : "block";
-    }
-  </script>
-
-</body>
-</html>
+      const popup = document.getElementById("contactPopup")
