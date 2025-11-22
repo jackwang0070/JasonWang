@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>法务线索直供平台</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f0f4f8, #ffffff);
+      background: linear-gradient(135deg, #e6f0ff, #ffffff);
       color: #111;
       text-align: center;
     }
@@ -20,7 +20,7 @@
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(8px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,61,98,0.1);
     }
 
     header h1 {
@@ -36,20 +36,23 @@
       color: #333;
     }
 
-    /* 宣传语竖列居中 */
+    /* 原五条宣传语 */
     .features {
       margin: 50px auto;
       display: flex;
-      flex-direction: column; /* 竖列排列 */
-      align-items: center;    /* 水平居中 */
-      gap: 15px;              /* 每条之间间距 */
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
 
     .feature-item {
       font-size: 1.1em;
       position: relative;
-      padding-left: 30px; /* 给 emoji 留位置 */
-      text-align: left;   /* 保证每条文字左对齐 */
+      padding-left: 30px;
+      text-align: left;
+      max-width: 600px;
+      color: #0a3d62;
+      font-weight: 500;
     }
 
     .feature-item::before {
@@ -85,17 +88,6 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.9);
-      color: #0a3d62;
-      border: 1px solid #0a3d62;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,1);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
-
     .popup {
       display: none;
       background: rgba(255,255,255,0.95);
@@ -125,13 +117,57 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* 新文案模块 蓝白科技风 */
+    .info-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: rgba(240, 248, 255,0.9);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    .info-section h2 {
+      margin-top:0;
+      font-size: 2em;
+      color:#0a3d62;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .info-section h3 {
+      font-size:1.4em;
+      margin-top:30px;
+      color:#0a3d62;
+    }
+
+    .info-section strong {
+      color:#1e90ff;
+    }
+
+    .info-section ul {
+      padding-left:20px;
+      line-height:1.9;
+    }
+
+    hr.section-divider {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid rgba(0,61,98,0.15);
+    }
+
     @media (max-width: 480px) {
       header h1 { font-size: 2.2em; }
       header p { font-size: 1em; }
       .feature-item { font-size: 1em; padding-left: 25px; }
       .btn { padding: 12px 30px; font-size: 1em; }
       .popup { width: 90%; padding: 20px; }
+      .info-section { padding: 25px 20px; }
+      .info-section h2 { font-size:1.6em; }
     }
+
   </style>
 </head>
 <body>
@@ -159,11 +195,56 @@
     <p>QQ：1102026095</p>
   </div>
 
-  <script>
-    function download() {
-      window.location.href = "https://example.com/download/linxiao.exe";
-    }
+  <!-- 新文案模块 -->
+  <section class="info-section">
+    <h2>精准法务线索 · 试用满意合作 · 客户主动留号</h2>
 
+    <h3>我们提供什么</h3>
+    <p>
+      我们团队每天稳定产出 <strong>1000 条左右线索</strong>，全部来自用户主动点击广告进入页面；<br>
+      - 用户自愿填写手机号或微信号；<br>
+      - 线索来源真实、非爬虫、非倒卖、非脚本生成；<br>
+      - 属于最上游的原生广告流量。
+      <br><br>
+      我们不包装、不加工，直接提供精准、真实、需要法律援助追回欠款的债主资料。
+    </p>
+
+    <hr class="section-divider">
+
+    <h3>线索优势</h3>
+    <p>
+      <strong>✅ 全部主动留号</strong><br>
+      用户自己填写联系方式，真实性高、接通率好。<br><br>
+
+      <strong>✅ 量大且稳定</strong><br>
+      每日 1000 条以上，长期稳定供应。<br><br>
+
+      <strong>✅ 真实广告投流</strong><br>
+      所有线索来自我们自有广告投放引流，而非购买数据或爬虫抓取。
+    </p>
+
+    <hr class="section-divider">
+
+    <h3>适用客户</h3>
+    <ul>
+      <li>法务咨询公司</li>
+      <li>催收团队</li>
+      <li>律所商务部门</li>
+      <li>线索转化团队</li>
+      <li>需要大量接通电话的运营团队</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <h3>试单机制（零风险）</h3>
+    <p>
+      • 可先提供 <strong>100 条试单</strong>；<br>
+      • 客户自行验证真实性与接通率；<br>
+      • 满意后再进入长期合作。
+    </p>
+  </section>
+
+  <script>
     function togglePopup() {
       const popup = document.getElementById("contactPopup");
       popup.style.display = popup.style.display === "block" ? "none" : "block";
