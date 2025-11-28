@@ -1,257 +1,113 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>法务线索直供平台</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>咨询</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #e6f0ff, #ffffff);
-      color: #111;
-      text-align: center;
-    }
-
-    header {
-      padding: 100px 20px;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border-bottom: 1px solid rgba(0,61,98,0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3.2em;
-      font-weight: 700;
-      color: #0a3d62;
-    }
-
-    header p {
-      margin-top: 15px;
-      font-size: 1.3em;
-      color: #333;
-    }
-
-    /* 原五条宣传语 */
-    .features {
-      margin: 50px auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .feature-item {
-      font-size: 1.1em;
-      position: relative;
-      padding-left: 30px;
-      text-align: left;
-      max-width: 600px;
-      color: #0a3d62;
-      font-weight: 500;
-    }
-
-    .feature-item::before {
-      content: "👉";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    .buttons {
-      margin: 50px 0;
-    }
-
-    .btn {
-      padding: 15px 45px;
-      font-size: 1.1em;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      margin: 12px;
-      font-weight: 600;
-      transition: 0.3s;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #0a84ff, #1e90ff);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #0066d6, #0a64c2);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .popup {
-      display: none;
-      background: rgba(255,255,255,0.95);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      width: 340px;
-      margin: 20px auto;
-      text-align: left;
-      animation: fadeIn 0.3s ease;
-      backdrop-filter: blur(6px);
-    }
-
-    .popup h3 {
-      margin-top: 0;
-      font-size: 1.4em;
-      color: #0a3d62;
-    }
-
-    .popup p {
-      font-size: 1em;
-      margin: 6px 0;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* 新文案模块 蓝白科技风 */
-    .info-section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 40px 30px;
-      background: rgba(240, 248, 255,0.9);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: left;
-      line-height: 1.8;
-    }
-
-    .info-section h2 {
-      margin-top:0;
-      font-size: 2em;
-      color:#0a3d62;
-      font-weight:700;
-      text-align:center;
-    }
-
-    .info-section h3 {
-      font-size:1.4em;
-      margin-top:30px;
-      color:#0a3d62;
-    }
-
-    .info-section strong {
-      color:#1e90ff;
-    }
-
-    .info-section ul {
-      padding-left:20px;
-      line-height:1.9;
-    }
-
-    hr.section-divider {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid rgba(0,61,98,0.15);
-    }
-
-    @media (max-width: 480px) {
-      header h1 { font-size: 2.2em; }
-      header p { font-size: 1em; }
-      .feature-item { font-size: 1em; padding-left: 25px; }
-      .btn { padding: 12px 30px; font-size: 1em; }
-      .popup { width: 90%; padding: 20px; }
-      .info-section { padding: 25px 20px; }
-      .info-section h2 { font-size:1.6em; }
-    }
-
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa6b2;--white:#f8fafc}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#061021 0%, #071428 60%);color:var(--white)}
+    .card{width:100%;max-width:460px;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{font-size:18px;margin:0}
+    p.lead{margin:6px 0 18px;color:var(--muted);font-size:13px}
+    form{display:grid;gap:12px}
+    .input-wrap{display:flex;gap:8px}
+    input[type="tel"]{flex:1;padding:14px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);outline:none;font-size:15px}
+    .hint{font-size:12px;color:var(--muted)}
+    button.submit{background:linear-gradient(90deg,var(--accent),#7c3aed);border:none;padding:12px;border-radius:10px;color:#042027;font-weight:600;font-size:15px;cursor:pointer}
+    button.submit:disabled{opacity:0.6;cursor:not-allowed}
+    .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+    .success{display:none;padding:12px;border-radius:8px;background:linear-gradient(90deg,#052024,#06323a);color:#9ff0ea;font-weight:600}
+    .error{color:#ffb4b4;font-size:13px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+    @media (max-width:480px){.card{padding:20px;border-radius:12px}}
   </style>
 </head>
 <body>
+  <div class="card" role="main">
+    <div class="brand">
+      <div class="logo">咨询</div>
+      <div>
+        <h1>客户咨询留言</h1>
+        <p class="lead">留下您的联系方式，我们的法务团队会联系您</p>
+      </div>
+    </div>
 
-  <header>
-    <h1>法务线索直供平台</h1>
-    <p>精准、高效、可靠，让法务电销更轻松</p>
-  </header>
+    <form id="leadForm" autocomplete="off">
+      <label for="phone" class="hint">手机号/微信号</label>
+      <div class="input-wrap">
+        <input id="phone" name="phone" type="tel" placeholder="请输入手机号，例如 13800138000" inputmode="tel" required pattern="^1\d{10}$" />
+        <button class="submit" id="submitBtn" type="submit">提交</button>
+      </div>
+      <div class="row">
+        <div class="hint">已严格加密。</div>
+        <div id="msg" class="error" aria-live="polite"></div>
+      </div>
+    </form>
 
-  <div class="features">
-    <div class="feature-item">精准债主线索直供</div>
-    <div class="feature-item">法务电销高转化客户</div>
-    <div class="feature-item">全主动留号、高接通率</div>
-    <div class="feature-item">每日上新、免费试用、满意合作</div>
-    <div class="feature-item">提供CRM办公系统</div>
+    <div id="success" class="success" role="status">提交成功 — 我们的法务团队会联系您，请保持手机畅通。</div>
+
+    <footer>© 奇点工作室 | 版权所有</footer>
   </div>
-
-  <div class="buttons">
-    <button class="btn btn-primary" onclick="togglePopup()">联系电话 13301510024</button>
-  </div>
-
-  <div>
-    <h3>更多联系方式</h3>
-    <p>微信：leiplusplus</p>
-    <p>QQ：1658394392</p>
-
-  </div>
-
-  <!-- 新文案模块 -->
-  <section class="info-section">
-    <h2>精准法务线索 · 试用满意合作 · 客户主动留号</h2>
-
-    <h3>我们提供什么</h3>
-    <p>
-      我们团队每天稳定引流 <strong>1000 条左右线索</strong>，全部来自用户主动点击广告进入页面；<br>
-      - 用户自愿填写手机号或微信号<br>
-      - 每天大量新增<br>
-      - 线索来源真实<br>
-      - 属于最上游的原生广告流量
-      <br><br>
-      我们不包装、不加工，直接提供精准、真实、需要法律援助追回欠款的债主引流线索。
-    </p>
-
-    <hr class="section-divider">
-
-    <h3>线索优势</h3>
-    <p>
-      <strong>✅ 全部主动留号</strong><br>
-      用户自己填写联系方式，真实性高、接通率好。<br><br>
-
-      <strong>✅ 量大且稳定</strong><br>
-      每日 1000 条以上，长期稳定供应。<br><br>
-
-      <strong>✅ 真实广告投流</strong><br>
-      所有线索均来自真实广告投流，支持大量免费试用
-    </p>
-
-    <hr class="section-divider">
-
-    <h3>适用客户</h3>
-    <ul>
-      <li>法务咨询公司</li>
-      <li>催收团队</li>
-      <li>律所商务部门</li>
-      <li>线索转化团队</li>
-      <li>需要大量接通电话的运营团队</li>
-    </ul>
-
-    <hr class="section-divider">
-
-    <h3>试单机制（零风险）</h3>
-    <p>
-      • 可先提供 <strong>100 条试单</strong>；<br>
-      • 客户自行验证真实性与接通率；<br>
-      • 满意后再进入长期合作。
-    </p>
-  </section>
 
   <script>
-    function togglePopup() {
-      const popup = document.getElementById("contactPopup");
-      popup.style.display = popup.style.display === "block" ? "none" : "block";
-    }
-  </script>
+    const form = document.getElementById('leadForm');
+    const phone = document.getElementById('phone');
+    const msg = document.getElementById('msg');
+    const success = document.getElementById('success');
+    const submitBtn = document.getElementById('submitBtn');
 
+    function validatePhone(v){
+      return /^1\d{10}$/.test(v.trim());
+    }
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      msg.textContent = '';
+      success.style.display = 'none';
+      const v = phone.value || '';
+      if(!validatePhone(v)){
+        msg.textContent = '请输入合法的 11 位手机号';
+        phone.focus();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '提交中...';
+
+      try{
+        // 将下面的 URL 改为你的后端接收地址
+        const resp = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone: v })
+        });
+
+        if(resp.ok){
+          success.style.display = 'block';
+          // 复制手机号到剪贴板（方便人工处理）
+          try{ await navigator.clipboard.writeText(v); }catch(e){}
+          form.reset();
+        }else{
+          const text = await resp.text();
+          msg.textContent = text || '提交失败，请稍后重试';
+        }
+      }catch(err){
+        msg.textContent = '网络异常，请检查连接';
+      }finally{
+        submitBtn.disabled = false;
+        submitBtn.textContent = '提交';
+      }
+    });
+
+    // Enter 提交支持
+    phone.addEventListener('keypress', e => {
+      if(e.key === 'Enter') e.preventDefault();
+    });
+  </script>
 </body>
 </html>
